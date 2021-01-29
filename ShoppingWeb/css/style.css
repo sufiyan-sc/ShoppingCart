@@ -355,4 +355,93 @@ input[type="number"]::-webkit-outer-spin-button {
 .square input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container {
+  background-color: var(--background-dark);
+  height: 50vh;
+  width: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .header {
+  color: var(--text_primary_accent);
+  position: relative;
+}
+
+.container #list {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  caret-color: var(--primary-dark);
+  text-transform: capitalize;
+}
+
+.container .btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .btn-container .btn {
+  width: 9rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.container .btn-container .btn p {
+  margin: auto;
+  color: var(--text-contrast);
+  font: normal normal normal 16px/22px lato;
+}
+
+.container .btn-container .btn:last-child {
+  background: none;
+  color: var(--text-contrast);
+  border: 1px solid;
+}
+
+#list-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: var(--primary-darker);
+}
+
+#list-container .title {
+  position: relative;
+  top: 1rem;
+}
+
+#list-container ul {
+  position: relative;
+  margin: 1rem;
+}
+
+#list-container ul .the-item {
+  color: var(--text-contrast);
+  display: block;
+  font: normal normal normal 20px/24px lato;
+  text-transform: capitalize;
+}
 /*# sourceMappingURL=style.css.map */

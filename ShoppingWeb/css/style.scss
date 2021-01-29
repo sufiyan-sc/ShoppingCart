@@ -265,3 +265,73 @@ input[type="number"]::-webkit-outer-spin-button {
 .square input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
+
+// USER FLOW
+
+// 1. Creating list
+main {
+  display: flex;
+}
+.container {
+  background-color: var(--background-dark);
+  height: 50vh;
+  width: 50vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+
+  .header {
+    color: var(--text_primary_accent);
+    position: relative;
+  }
+
+  #list {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    caret-color: var(--primary-dark);
+    text-transform: capitalize;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: space-between;
+    .btn {
+      width: 9rem;
+      padding: 0.5rem;
+      border-radius: 4px;
+      outline: none;
+      border: none;
+
+      p {
+        margin: auto;
+        color: var(--text-contrast);
+        font: normal normal normal 16px/22px lato;
+      }
+    }
+    .btn:last-child {
+      background: none;
+      color: var(--text-contrast);
+      border: 1px solid;
+    }
+  }
+}
+#list-container {
+  flex: 1;
+  background-color: var(--primary-darker);
+  .title {
+    position: relative;
+    top: 1rem;
+  }
+  ul {
+    position: relative;
+    margin: 1rem;
+    .the-item {
+      color: var(--text-contrast);
+      display: block;
+      font: normal normal normal 20px/24px lato;
+      text-transform: capitalize;
+    }
+  }
+}
