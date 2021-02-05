@@ -6,6 +6,16 @@
   font-family: "Lato";
 }
 
+a {
+  text-decoration: none;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 :root {
   --text-link: #1bd0cb;
   --text-contrast: #ffffff;
@@ -20,6 +30,7 @@
   --background-dark: #15191f;
   --text-lighter: #ffffffb3;
   --text-light: #cdd1d4;
+  --error: #e91e63;
 }
 
 .center-container {
@@ -95,7 +106,8 @@
   height: 75vh;
 }
 
-.personalDetailsContainer {
+.personalDetailsContainer,
+.signInContainer {
   position: relative;
   background-color: var(--background-primary);
   border-radius: 8px;
@@ -111,7 +123,7 @@
           align-items: center;
   width: 500px;
   padding: 1rem 0;
-  height: 500px;
+  margin-top: 10rem;
 }
 
 .user-icon,
@@ -285,6 +297,12 @@ input[type="number"]::-webkit-outer-spin-button {
           transform: translate(-50%, -50%);
 }
 
+small {
+  color: var(--error);
+  min-height: 1rem;
+  visibility: hidden;
+}
+
 /* personal details screen  */
 .personalDetailsContainer .message {
   margin-top: 3rem;
@@ -306,7 +324,7 @@ input[type="number"]::-webkit-outer-spin-button {
   font: normal normal normal 14px/20px lato;
   color: var(--text-contrast);
   position: relative;
-  bottom: 1.2rem;
+  bottom: 0.9rem;
 }
 
 .terms span {
@@ -316,6 +334,7 @@ input[type="number"]::-webkit-outer-spin-button {
 /* checkbox  */
 .square {
   position: relative;
+  top: 5px;
 }
 
 .square label {
@@ -354,6 +373,63 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .square input[type="checkbox"]:checked + label:after {
   opacity: 1;
+}
+
+.signInContainer .sign-in-btn,
+.signInContainer .btn {
+  border: none;
+  background: transparent linear-gradient(266deg, var(--primary-dark) 0%, var(--primary-darker) 100%) 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 22rem;
+  position: relative;
+  padding: 0 1rem;
+  height: 3rem;
+  margin: 1rem;
+}
+
+.signInContainer .btn-icon {
+  margin: auto 0;
+}
+
+.signInContainer .label {
+  text-align: center;
+  font: normal normal 600 20px/36px lato;
+  letter-spacing: 2px;
+  color: var(--text-contrast);
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+.signInContainer .create-account-label {
+  color: var(--text-link);
+  font-size: 14px;
+  margin-top: 0 !important;
+  font: normal normal 600 14px/15px Open Sans;
+}
+
+.signInContainer .forgot-password-label {
+  font: normal normal normal 14px/20px Open Sans;
+  letter-spacing: 0px;
+  color: #f7fafc;
+}
+
+.signInContainer .reset-option {
+  font: normal normal 600 14px/20px Open Sans;
+  letter-spacing: 0px;
+  color: var(--text-link) !important;
+}
+
+.signInContainer .account-label {
+  font: normal normal normal 12px/20px Open Sans;
+  letter-spacing: 0px;
+  color: #f7fafc;
+  margin: 1rem 0 0 0;
 }
 
 main {
