@@ -2,406 +2,128 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lato";
+  font-family: lato;
 }
-a {
-  text-decoration: none;
-}
-.flex {
-  display: flex;
-}
-
-:root {
-  --text-link: #1bd0cb;
-  --text-contrast: #ffffff;
-  --primary-dark: #f26247;
-  --primary-darker: #cb3f23;
-  --secondary-dark: #717c84;
-  --secondary-darker: #606a71;
-  --text_primary_accent: #f7ba62;
-  --text-grey-light: #9ca7af;
-  --background-secondary: #292f38;
-  --background-primary: #1f242b;
-  --background-dark: #15191f;
-  --text-lighter: #ffffffb3;
-  --text-light: #cdd1d4;
-  --error: #e91e63;
-}
-
-.center-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-::placeholder {
-  text-align: left;
-  font: normal normal normal 16px/22px lato;
-  letter-spacing: 0px;
-  color: var(--text-contrast);
-  opacity: 0.4;
-}
-.message {
-  text-align: center;
-  font: normal normal normal 14px/20px lato;
-  letter-spacing: 0px;
-  color: var(--text-contrast);
-  width: 19rem;
-}
-
-.backgroundContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 75vh;
-}
-
-.personalDetailsContainer,
-.signInContainer {
-  position: relative;
-  background-color: var(--background-primary);
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 500px;
-  padding: 1rem 0;
-  margin-top: 10rem;
-}
-.user-icon,
-.password-icon {
-  position: relative;
-  right: 1.5rem;
-}
-.close-btn {
-  position: absolute;
-  right: 12px;
-  top: 12px;
-}
-.btn-label {
-  text-align: center;
-  font: normal normal 600 16px/19px lato;
-  letter-spacing: 1.6px;
-  color: var(--text-contrast);
-  text-transform: uppercase;
-  margin: auto 0;
-}
-.btn {
-  border: none;
-  background: transparent
-    linear-gradient(266deg, var(--primary-dark) 0%, var(--primary-darker) 100%)
-    0% 0% no-repeat padding-box;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  width: 22rem;
-  position: relative;
-  height: 3rem;
-  padding: 0 1rem;
-}
-.btn-icon {
-  margin: auto 0;
-}
-.label {
-  text-align: center;
-  font: normal normal 600 20px/36px lato;
-  letter-spacing: 2px;
-  color: var(--text-contrast);
-  text-transform: uppercase;
-  margin: 1rem 0;
-}
-
-.message {
-  color: var(--text-contrast);
-  width: 15rem;
-  font-size: 14px;
-  text-align: center;
-}
-.title {
-  text-align: center;
-  font: normal normal 600 20px/24px lato;
-  letter-spacing: 0px;
-  color: var(--text_primary_accent);
-  position: absolute;
-  top: 2rem;
-}
-.back-btn {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-}
-.form-wrapper {
-  display: flex;
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.form-container {
-  display: flex;
-  position: relative;
-  width: 22rem;
-}
-.form-group {
-  position: relative;
-  width: 300px;
-  max-width: 100%;
-  margin-bottom: 0 !important;
-}
-.input-feild {
-  width: 22rem;
-  background-color: #15191f;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  color: var(--text-contrast);
-  height: 3rem;
-}
-.form-group input {
-  border: none;
-  color: var(--text-contrast);
-  font: normal normal 600 16px/22px lato;
-  display: block;
-  width: 100%;
-  background-color: var(--background-dark);
-  padding-left: 12px;
-  padding-bottom: 0;
-  width: 103%;
-}
-.form-group label {
-  color: var(--text-lighter);
-  font: normal normal normal 14px/22px lato;
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  transform: translate(12px, 24px);
-  transition: all 0.2s ease-in-out;
-  left: 0px;
-  opacity: 0.4;
-}
-.form-group input:valid,
-.form-group input:focus {
-  outline: none;
-}
-.form-group input:valid + label,
-.form-group input:focus + label {
-  color: var(--text-lighter);
-  font: normal normal normal 12px/17px lato;
-  transform: translate(12px, 12px);
-}
-.float {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  background-color: var(--background-dark);
-  height: 3rem;
-  width: 3rem;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-.icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-small {
-  color: var(--error);
-  min-height: 1rem;
-  visibility: hidden;
-}
-
-/* personal details screen  */
-
-.personalDetailsContainer .message {
-  margin-top: 3rem;
-}
-.personalDetailsContainer .scroll .scroll-hide {
-  max-height: 14rem;
-}
-.personalDetailsContainer .progress .bar {
-  width: 7.5rem;
-}
-.personalDetailsContainer .square {
-  right: 10rem;
-}
-.terms {
-  font: normal normal normal 14px/20px lato;
-  color: var(--text-contrast);
-  position: relative;
-  bottom: 0.9rem;
-}
-.terms span {
-  color: var(--text-link);
-}
-
-/* checkbox  */
-
-.square {
-  position: relative;
-  top: 5px;
-}
-.square label {
-  background-color: var(--background-dark);
-  border-radius: 20%;
-  cursor: pointer;
-  height: 20px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 20px;
-}
-.square label:after {
-  border: 2px solid #fff;
-  border-top: none;
-  border-right: none;
-  content: "";
-  height: 4px;
-  left: 4px;
-  position: absolute;
-  top: 6px;
-  transform: rotate(-45deg);
-  width: 12px;
-  opacity: 0;
-}
-.square input[type="checkbox"] {
-  visibility: hidden;
-}
-.square input[type="checkbox"]:checked + label {
-  background-color: var(--text-link);
-}
-.square input[type="checkbox"]:checked + label:after {
-  opacity: 1;
-}
-
-// USER FLOW
-
-// Sign In container
-.signInContainer {
-  .sign-in-btn,
-  .btn {
-    border: none;
-    background: transparent
-      linear-gradient(
-        266deg,
-        var(--primary-dark) 0%,
-        var(--primary-darker) 100%
-      )
-      0% 0% no-repeat padding-box;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    width: 22rem;
-    position: relative;
-    padding: 0 1rem;
-    height: 3rem;
-    margin: 1rem;
-  }
-  .btn-icon {
-    margin: auto 0;
-  }
-  .label {
-    text-align: center;
-    font: normal normal 600 20px/36px lato;
-    letter-spacing: 2px;
-    color: var(--text-contrast);
-    text-transform: uppercase;
-    margin: 1rem 0;
-  }
-  .create-account-label {
-    color: var(--text-link);
-    font-size: 14px;
-    margin-top: 0 !important;
-    font: normal normal 600 14px/15px Open Sans;
-  }
-  .forgot-password-label {
-    font: normal normal normal 14px/20px Open Sans;
-    letter-spacing: 0px;
-    color: #f7fafc;
-  }
-  .reset-option {
-    font: normal normal 600 14px/20px Open Sans;
-    letter-spacing: 0px;
-    color: var(--text-link) !important;
-  }
-  .account-label {
-    font: normal normal normal 12px/20px Open Sans;
-    letter-spacing: 0px;
-    color: #f7fafc;
-    margin: 1rem 0 0 0;
-  }
-}
-
-// 3. Creating list
 main {
   display: flex;
 }
-.container {
-  background-color: var(--background-dark);
-  height: 50vh;
-  width: 50vh;
-  display: flex;
-  flex-direction: column;
+#header {
   padding: 1rem;
-  justify-content: center;
+}
+#main-container {
+  background-color: #faebd7;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-block;
+  flex: 2;
+  border-radius: 8px;
+  display: flex;
+  margin: 0.5rem 1rem;
 
-  .header {
-    color: var(--text_primary_accent);
-    position: relative;
-  }
-
-  #list {
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    caret-color: var(--primary-dark);
-    text-transform: capitalize;
-  }
-
-  .btn-container {
+  .product-container {
+    height: 16rem;
+    width: 12rem;
+    float: left;
+    border: 1px solid #000000;
+    margin: 1rem;
+    border-radius: 8px;
     display: flex;
-    justify-content: space-between;
-    .btn {
-      width: 9rem;
-      padding: 0.5rem;
-      border-radius: 4px;
-      outline: none;
-      border: none;
+    align-items: center;
+    padding: 1rem;
+    flex-direction: column;
 
-      p {
-        margin: auto;
-        color: var(--text-contrast);
-        font: normal normal normal 16px/22px lato;
+    .image-container {
+      height: 8rem;
+      width: 8rem;
+      border-radius: 50%;
+      background-color: #ffffff;
+    }
+    .flex-container {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+
+      .quantity,
+      .price {
+        font-weight: bold;
       }
     }
-    .btn:last-child {
-      background: none;
-      color: var(--text-contrast);
-      border: 1px solid;
+    button {
+      padding: 0.5rem 2rem;
+      outline-color: #ffffff;
+      outline-width: 1px;
+      border: none;
+      background-color: #e91e63;
+      border-radius: 0.3rem;
+      color: #ffffff;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+  .added {
+    background-color: #43c943 !important;
+    color: #000000 !important;
+    font-weight: 600;
+  }
+}
+.remove-btn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #e91e63;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.cart-container {
+  border: 1px solid #000000;
+  height: auto;
+  border-radius: 0.5rem;
+  flex: 1;
+  margin: 0.5rem 1rem;
+  height: 340px;
+  overflow: auto;
+  background: #f0f8ff;
+  position: relative;
+  background-image: url(../imgs/emptyBox.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  .item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 0;
+    padding: 1rem;
+
+    .product-img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 0.5rem;
+    }
+    .product-name {
+      font-size: 1.2rem;
+    }
+    .counter {
+      height: 2rem;
+      width: 3rem;
+      text-align: center;
+      font-size: 1.2rem;
     }
   }
 }
-#list-container {
-  flex: 1;
-  background-color: var(--primary-darker);
-  .title {
-    position: relative;
-    top: 1rem;
-  }
-  ul {
-    position: relative;
-    margin: 1rem;
-    .the-item {
-      color: var(--text-contrast);
-      display: block;
-      font: normal normal normal 20px/24px lato;
-      text-transform: capitalize;
-    }
-  }
+.purchase-btn {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.5rem 2.5rem;
+  background-color: chartreuse;
+  border: none;
+  border-radius: 4px;
+  position: absolute;
+  left: 70%;
+  bottom: 2%;
+  //transform: translateX(-50%);
 }
