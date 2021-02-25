@@ -33,10 +33,6 @@ const headerData={
   footnote:'Stay Home And Shop Online'
 }
 
-
-
-
-
 function create(){
 
   const header = document.createElement('header');
@@ -101,9 +97,24 @@ function create(){
         btnLabel.className="label";
         btnLabel.innerText='ADD TO CART';
         buttonContainer.appendChild(btnLabel);
+
+
     }
 }
 create();
+
+// DIALOG CONTAINER
+
+
+let dialogContainer = document.createElement('div');
+dialogContainer.className="dialog-container";
+// dialogContainer.style.backgroundColor=notifications[i].background;
+document.body.appendChild(dialogContainer);
+
+let dialogTitle = document.createElement('p');
+dialogTitle.className="dialog-title";
+// dialogTitle.innerText=notifications[i].title;
+dialogContainer.appendChild(dialogTitle);
 
 // CART CAONTAINER
 
@@ -115,6 +126,33 @@ let purchaseBtn = document.createElement("button");
 purchaseBtn.className="purchase-btn";
 purchaseBtn.innerText="CHECKOUT"
 main.appendChild(purchaseBtn);
+
+let checkoutBtn = document.querySelector('.purchase-btn');
+console.log(checkoutBtn)
+checkoutBtn.addEventListener('click',checkout);
+
+function checkout(){
+  let checkStatus = document.getElementsByClassName('item-container');
+  let messageBox = document.querySelector('.dialog-container');
+  let message = document.querySelector('.dialog-title');
+  if(checkStatus.length!=0){
+   messageBox.classList.add("success");
+   messageBox.classList.remove("warning","added");
+   message.innerText="Thanks for the purchase";
+   let cartContainerEl = document.querySelector('.cart-container');
+   let total =  document.querySelector('.total-price');
+   while(cartContainerEl.hasChildNodes()){
+     cartContainerEl.removeChild(cartContainerEl.firstChild);
+     total.innerText="₹ 0"
+   }
+  }
+  else{
+    messageBox.classList.add("warning");
+    messageBox.classList.remove("success","added");
+    message.innerText="No items added to cart";
+  }
+}
+
 
 let totalAmtContainer = document.createElement("div");
 totalAmtContainer.setAttribute(
@@ -132,7 +170,7 @@ totalAmt.innerText = " ₹ 0";
 totalAmtContainer.appendChild(totalAmtLabel);
 totalAmtContainer.appendChild(totalAmt);
 
-let selectedBtnEl = document.querySelectorAll('.add-btn');
+let selectedBtnEl = document.getElementsByClassName('add-btn');
 for(let i=0;i<selectedBtnEl.length;i++){
   let selectedBtn = selectedBtnEl[i];
   selectedBtn.addEventListener('click',addToCart);
@@ -151,6 +189,20 @@ cartTotal();
 
 
 function addItemsToCart(img,title,price){
+
+  let productTitle = document.getElementsByClassName('product-name');
+  let messageBox = document.querySelector('.dialog-container');
+  let message = document.querySelector('.dialog-title');
+ 
+  for(let i=0;i<productTitle.length;i++){
+    if(productTitle[i].innerText==title){
+      messageBox.classList.add("added");
+      messageBox.classList.remove("warning","success");
+      message.innerText=`${title} is already added`;
+      return
+    }
+  }
+
 
   let itemContainer = document.createElement("div");
   itemContainer.className = "item-container";
@@ -205,20 +257,8 @@ function quantity(event){
   cartTotal();
 }
 }
- 
-//   let selectedItemContainer = document.querySelectorAll('.item-container');
-//   for(let i=0;i<selectedItemContainer.length;i++){
-//   let productTitle = selectedItemContainer[i].querySelector('.product-name');
-//   let selectedProductTitle = productTitle.innerText;
-//   if(title==selectedProductTitle){
-//     return
-//   }
 
-// }
 // to update total amount
-
-
-
 function cartTotal(){
 let cartItemEl=document.querySelectorAll('.item-container');
 let total = 0;

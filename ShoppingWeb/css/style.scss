@@ -86,7 +86,6 @@ main {
   overflow: auto;
   background: #f0f8ff;
   position: relative;
-  background-image: url(../imgs/emptyBox.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -126,4 +125,86 @@ main {
   left: 70%;
   bottom: 2%;
   //transform: translateX(-50%);
+}
+
+.cart-container:empty {
+  background-image: url(./imgs/emptyBox.png);
+}
+
+.cart-container:empty ~ .purchase-btn {
+  background-color: #e5e5fa;
+}
+
+.dialog-container {
+  border: 1px solid #000;
+  position: absolute;
+  width: 32vw;
+  height: 8vh;
+  border-radius: 4px;
+  z-index: 999;
+  left: 50%;
+  top: 7%;
+  transform: translate(-50%, -50%);
+  background-color: #ffeb3b;
+  display: none;
+  //position: relative;
+}
+
+.dialog-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 19px;
+  text-transform: capitalize;
+}
+.success,
+.warning,
+.added {
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  display: block;
+}
+.success {
+  animation-name: fade;
+  background-color: #ffeb3b;
+}
+.warning {
+  animation-name: fade2;
+  background-color: #f44336;
+}
+.added {
+  animation-name: fade3;
+  background-color: #8bc34a;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes fade2 {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes fade3 {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
